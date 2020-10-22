@@ -30,6 +30,8 @@ int p1score;
 int p2score;
 
 
+boolean AI;
+
 
 
 void setup() {
@@ -53,6 +55,9 @@ void setup() {
   
   //initialize keyboard variables
   wkey = skey = upkey = downkey = false;
+  
+  // 2 player or solo
+  AI = true;
   
 }
 

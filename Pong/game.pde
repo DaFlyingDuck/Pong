@@ -11,11 +11,15 @@ void game() {
   rect(right_paddle.x, right_paddle.y - 45, 40, 90);
   
   //move paddles
-  if (wkey == true) left_paddle.y -= 9;
-  if (skey == true) left_paddle.y += 9;
-  if (upkey == true) right_paddle.y -= 9;
-  if (downkey == true) right_paddle.y += 9;
+  if (wkey == true) left_paddle.y -= 10;
+  if (skey == true) left_paddle.y += 10;
   
+  if (AI == false) {
+    if (upkey == true) right_paddle.y -= 10;
+    if (downkey == true) right_paddle.y += 10;
+  } else {
+    AI();
+  }
   
   //ball
   update();
@@ -23,7 +27,7 @@ void game() {
   
   //code to bounce the ball
   collision();
-  
+  if (ball_v.mag() > 40) ball_v.setMag(40);
   
 }
 

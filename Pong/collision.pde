@@ -1,7 +1,7 @@
 void collision() {
   
   //Collision with vertical walls
-  if (ball.y + ball_d/2 >= height || ball.y - ball_d/2 <= 0) ball_v.y = ball_v.y * -1.05;
+  if (ball.y + ball_d/2 >= height || ball.y - ball_d/2 <= 0) ball_v.y = ball_v.y * -1;
   
   
   // Scoring Collision
@@ -36,34 +36,34 @@ void collision() {
       
       Angle = new PVector(1, 0);
       Angle.rotate(radians(-50));
-      Angle.setMag(ball_v.mag() * 1.4);
+      Angle.setMag(ball_v.mag() * 1.1);
       ball_v = new PVector(Angle.x, Angle.y);
       
     } else if (ball.y >= left_paddle.y - 27 && ball.y < left_paddle.y - 9) { //inner area
       
       Angle = new PVector(1, 0);
       Angle.rotate(radians(-30));
-      Angle.setMag(ball_v.mag() * 1.3);
+      Angle.setMag(ball_v.mag() * 1.05);
       ball_v = new PVector(Angle.x, Angle.y);
       
     } else if (ball.y >= left_paddle.y - 9 && ball.y < left_paddle.y + 9) { // middle
     
       Angle = new PVector(1, 0);
-      Angle.setMag(ball_v.mag() * 1.25);
+      Angle.setMag(ball_v.mag() * 1.01);
       ball_v = new PVector(Angle.x, Angle.y);
       
     } else if (ball.y >= left_paddle.y + 9 && ball.y < left_paddle.y + 27) { //inner area
     
       Angle = new PVector(1, 0);
       Angle.rotate(radians(30));
-      Angle.setMag(ball_v.mag() * 1.3);
+      Angle.setMag(ball_v.mag() * 1.05);
       ball_v = new PVector(Angle.x, Angle.y);
       
     } else if (ball.y >= left_paddle.y + 27 && ball.y <= left_paddle.y + 45 + ball_d/2) { // outer edge
     
       Angle = new PVector(1, 0);
       Angle.rotate(radians(50));
-      Angle.setMag(ball_v.mag() * 1.4);
+      Angle.setMag(ball_v.mag() * 1.1);
       ball_v = new PVector(Angle.x, Angle.y);
       
     }
