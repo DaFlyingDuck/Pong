@@ -12,7 +12,7 @@ void AI() {
 
     if (ball.y - 9 > right_paddle.y) {
 
-      if (ball.y > 500 && ball_v.y < -5 &&  ball.x < 500 && right_paddle.y > 500) {
+      if (ball.y > 500 && ball_v.y < -5 &&  ball.x < 500 && right_paddle.y > 400) {
         right_paddle.y = right_paddle.y - 9;
       } else {
         right_paddle.y += 9;
