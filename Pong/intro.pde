@@ -1,5 +1,7 @@
 void intro() {
   
+  background(180);
+  
   //Title 
   textSize(65);
   fill(0);
@@ -9,16 +11,31 @@ void intro() {
   p1score = 0;
   p2score = 0;
   
-  //Start button
+  //Start buttons
   strokeWeight(4);
-  if (mouseX >= 300 && mouseX <= 500 && mouseY >= 350 && mouseY <= 450) {
+  if (mouseX >= 150 && mouseX <= 350 && mouseY >= 350 && mouseY <= 450) {
     stroke(255);
   } else {
     noStroke();
   }
-  rect(300, 350, 200, 100);
+  
+  fill(0);
+  rect(150, 350, 200, 100);
   fill(255);
-  text("Start", 400, 390);
+  textSize(47);
+  text("1 Player", 250, 390);
+
+  strokeWeight(4);
+  if (mouseX >= 350 && mouseX <= 550 && mouseY >= 350 && mouseY <= 450) {
+    stroke(255);
+  } else {
+    noStroke();
+  }
+  fill(0);
+  rect(450, 350, 200, 100);
+  fill(255);
+  textSize(47);
+  text("2 Player", 550, 390);
   
   
 }
@@ -26,9 +43,19 @@ void intro() {
 
 void introClicks() {
   
-  if (mouseX >= 300 && mouseX <= 500 && mouseY >= 350 && mouseY <= 450) {
+  if (mouseX >= 150 && mouseX <= 350 && mouseY >= 350 && mouseY <= 450) {
+    
+    reset();
+    AI = true;
     mode = GAME;
-  } 
+    
+  } else if (mouseX >= 350 && mouseX <= 550 && mouseY >= 350 && mouseY <= 450) {
+    
+    reset();
+    AI = false;
+    mode = GAME;
+    
+  }
   
   
   

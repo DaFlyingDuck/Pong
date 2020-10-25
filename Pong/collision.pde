@@ -9,13 +9,20 @@ void collision() {
     
     p2score ++;
     reset();
- 
+    if (p2score >= 3) {
+      mode = GAMEOVER;
+    }
+
   }
     
   if (ball.x + ball_d/2 >= width) {
     
     p1score ++;
     reset();
+    if (p1score >= 3) {
+      mode = GAMEOVER;
+    }
+    
   }
 
   // Limiting paddles to within walls

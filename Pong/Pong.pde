@@ -56,8 +56,6 @@ void setup() {
   //initialize keyboard variables
   wkey = skey = upkey = downkey = false;
   
-  // 2 player or solo
-  AI = true;
   
 }
 

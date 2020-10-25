@@ -19,5 +19,7 @@ void reset() {
   ball_v.normalize();
   ball_v.mult(4.5);
   ball = new PVector(width/2, height/2);
+  left_paddle = new PVector(20, height/2);
+  right_paddle = new PVector(740, height/2);
    
 }
