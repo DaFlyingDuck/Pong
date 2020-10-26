@@ -1,7 +1,8 @@
 void intro() {
   
   background(180);
-  
+  intro.play();
+
   //Title 
   textSize(65);
   fill(0);
@@ -48,12 +49,16 @@ void introClicks() {
     reset();
     AI = true;
     mode = GAME;
+    intro.pause();
+    intro.rewind();
     
   } else if (mouseX >= 350 && mouseX <= 550 && mouseY >= 350 && mouseY <= 450) {
     
     reset();
     AI = false;
     mode = GAME;
+    intro.pause();
+    intro.rewind();
     
   }
   

@@ -1,10 +1,10 @@
 void AI() {
 
-  if (ball.x < 300 && right_paddle.y < 285 && (ball_v.x < 10 && ball_v.y > 3)) {
+  if (ball.x < 400 && right_paddle.y < 285 && (ball_v.x < 10 && ball_v.y > 3)) {
 
     right_paddle.y += 8;
     
-  } else if (ball.x < 300 && right_paddle.y > 315 && (ball_v.x < 10 && ball_v.y > 3)) {
+  } else if (ball.x < 400 && right_paddle.y > 315 && (ball_v.x < 10 && ball_v.y > 3)) {
 
     right_paddle.y = right_paddle.y - 8;
     

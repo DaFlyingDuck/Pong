@@ -1,6 +1,17 @@
 //Pong
 //Taiki Shickele
 
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minim minim;
+AudioPlayer intro, theme, point, leftpaddle, rightpaddle, wall, clapping;
+
+
 int mode;
 
 final int INTRO     = 1;
@@ -32,6 +43,8 @@ int p2score;
 
 boolean AI;
 
+PFont comicsans;
+
 
 
 void setup() {
@@ -39,12 +52,14 @@ void setup() {
   frameRate(60);
   size(800, 600);
   textAlign(CENTER, CENTER);
+  comicsans = loadFont("ComicSansMS-Bold-48.vlw");
+  textFont(comicsans, 32);
   mode = INTRO;
   
   //intialize Ball
   ball_v = new PVector(random(-1, 1), random(-1, 1));
   ball_v.normalize();
-  ball_v.mult(4.5);
+  ball_v.mult(6);
   ball = new PVector(width/2, height/2);
   ball_d = 25;
   timer = 0;
@@ -55,6 +70,16 @@ void setup() {
   
   //initialize keyboard variables
   wkey = skey = upkey = downkey = false;
+  
+  //minim
+  minim = new Minim(this);
+  //theme = minim.loadFile(" ");
+  point = minim.loadFile("score.wav");
+  leftpaddle = minim.loadFile("leftpaddle.wav");
+  rightpaddle = minim.loadFile("rightpaddle.wav");
+  wall = minim.loadFile("wall.wav");
+  clapping = minim.loadFile("clapping.wav");
+  intro = minim.loadFile("intro.wav");
   
   
 }
